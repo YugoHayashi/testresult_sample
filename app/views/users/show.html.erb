@@ -1,2 +1,2 @@
 <br>
-<%= @user.name1 %>, <%= @user.email %>
+<p><%= @user.name1 %> <%= @user.email %> <%= link_to "編集", edit_user_path %> <%= link_to "削除", user_path, method: :delete, data: { confirm: "削除しますか?" } %></p>

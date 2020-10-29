@@ -1,0 +1,24 @@
+<% provide(:title, "Edit user") %>
+<h1>編集</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name1, "ユーザー名"%>
+      <%= f.text_field :name1, class: 'form-control' %>
+
+      <%= f.label :name2, "ユーザー名かな" %>
+      <%= f.text_field :name2, class: 'form-control' %>
+
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.submit "更新", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
