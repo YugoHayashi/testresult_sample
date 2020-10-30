@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name1: MyString
+  jap_result: 1
+  math_result: 1
+  eng_result: 1
+  soci_result: 1
+  sci_result: 1
+
+two:
+  name1: MyString
+  jap_result: 1
+  math_result: 1
+  eng_result: 1
+  soci_result: 1
+  sci_result: 1

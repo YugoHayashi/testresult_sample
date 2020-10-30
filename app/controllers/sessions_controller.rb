@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user
       log_in user
-      redirect_to user
+      redirect_to users_path
     else
       flash.now[:danger] = 'Invalid email'
       render 'new'

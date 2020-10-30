@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
 
-  PER_PAGE = 20
-
   def index
     @q = User.ransack(params[:q])
     @users = @q.result.page(params[:page])

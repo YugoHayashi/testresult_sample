@@ -1,2 +1,23 @@
-<br>
-<p><%= @user.name1 %> <%= @user.email %> <%= link_to "編集", edit_user_path %> <%= link_to "削除", user_path, method: :delete, data: { confirm: "削除しますか?" } %></p>
+<table border="1">
+  <tbody>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ユーザ名</th>
+        <th>ユーザ名かな</th>
+        <th>メールアドレス</th>
+        <th>住所</th>
+        <th colspan="2">操作</th>
+      </tr>
+    </thead>
+      <tr>
+        <td><%= @user.id %></td>
+        <td><%= @user.name1 %></td>
+        <td><%= @user.name2 %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.address %></td>
+        <td><%= link_to "編集", edit_user_path %></td>
+        <td><%= link_to "削除", user_path, method: :delete, data: { confirm: "削除しますか?" } %></td>
+      </tr>
+  </tbody>
+</table>
