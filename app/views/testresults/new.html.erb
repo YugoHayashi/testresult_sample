@@ -1,3 +1,32 @@
 <% provide(:title, 'Sign up tests') %>
-<h1>Sign up tests</h1>
-<p>This will be a signup page for new users.</p>
+<h1>テスト結果登録</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@test) do |f| %>
+      <%= render 'shared/error_messages_for_tests' %>
+
+      <%= f.label :name1, "ユーザー名" %>
+      <%= f.text_field :name1, class: 'form-control' %>
+
+      <%= f.label :jap_result, "国語" %>
+      <%= f.text_field :jap_result, class: 'form-control' %>
+
+      <%= f.label :math_result, "数学" %>
+      <%= f.text_field :math_result, class: 'form-control' %>
+
+      <%= f.label :eng_result, "英語" %>
+      <%= f.text_field :eng_result, class: 'form-control' %>
+
+      <%= f.label :soci_result, "理科" %>
+      <%= f.text_field :soci_result, class: 'form-control' %>
+
+      <%= f.label :sci_result, "社会" %>
+      <%= f.text_field :sci_result, class: 'form-control' %>
+
+      <%= f.submit "登録", class: "btn btn-primary" %>
+    <% end %>
+    <br>
+    <%= link_to "戻る", root_path, class: "btn btn-lg btn-primary" %>
+  </div>
+</div>

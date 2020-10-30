@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/signuptests', to: 'testresults#new'
   resources :users
+  resources :testresults
 end
