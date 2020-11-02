@@ -7,6 +7,9 @@
   <%= f.submit "検索" %>
 <% end %>
 
+<%= link_to "新規登録", signup_path, class: "btn btn-lg btn-primary" %>
+<P><br></P>
+
 <table border="1">
   <tbody>
     <thead>
@@ -22,7 +25,7 @@
     <% @users.each do |u| %>
       <tr>
         <td><%= u.id %></td>
-        <td><%= link_to u.name1, u %></td>
+        <td><%= u.name1 %></td>
         <td><%= u.name2 %></td>
         <td><%= u.email %></td>
         <td><%= u.address %></td>

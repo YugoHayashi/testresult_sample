@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result.page(params[:page])
+    @users = @q.result.page(params[:page]).order(updated_at: "DESC")
   end
 
   def show
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name1, :name2, :email, :address)
+      params.require(:user).permit(:name1, :name2, :email, :address, :password)
     end
 
     def logged_in_user

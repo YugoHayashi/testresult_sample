@@ -1,7 +1,7 @@
 class TestresultsController < ApplicationController
 
   def index
-    @tests = Testresult.all
+    @tests = Testresult.all.order(updated_at: "DESC")
   end
 
   def show

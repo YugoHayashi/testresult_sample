@@ -1,6 +1,9 @@
 <% provide(:title, 'All testresults') %>
 <h3>テスト一覧</h3>
 
+<%= link_to "新規登録", testresults_path, class: "btn btn-lg btn-primary" %>
+<P><br></P>
+
 <table border="1">
   <tbody>
     <thead>
@@ -18,7 +21,7 @@
     <% @tests.each do |results| %>
       <tr>
         <td><%= results.id %></td>
-        <td><%= link_to results.name1, results %></td>
+        <td><%= link_to results.name1, "#" %></td>
         <td><%= results.jap_result %></td>
         <td><%= results.math_result %></td>
         <td><%= results.eng_result %></td>
