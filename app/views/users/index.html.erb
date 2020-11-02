@@ -1,5 +1,5 @@
 <% provide(:title, 'All users') %>
-<h3>ユーザー一覧</h3>
+<h3>ユーザ一覧</h3>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :name1_cont, "氏名" %>
@@ -19,15 +19,15 @@
         <th colspan="2">操作</th>
       </tr>
     </thead>
-    <% @users.each do |user| %>
+    <% @users.each do |u| %>
       <tr>
-        <td><%= link_to user.id, user %></td>
-        <td><%= link_to user.name1, user %></td>
-        <td><%= link_to user.name2, user %></td>
-        <td><%= link_to user.email, user %></td>
-        <td><%= link_to user.address, user %></td>
-        <td><%= link_to "編集", user %></td>
-        <td><%= link_to "削除", user, method: :delete, data: { confirm: "削除しますか?" } %></td>
+        <td><%= u.id %></td>
+        <td><%= link_to u.name1, u %></td>
+        <td><%= u.name2 %></td>
+        <td><%= u.email %></td>
+        <td><%= u.address %></td>
+        <td><%= link_to "編集", u %></td>
+        <td><%= link_to "削除", u, method: :delete, data: { confirm: "削除しますか?" } %></td>
       </tr>
     <% end %>
   </tbody>

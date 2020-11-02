@@ -20,6 +20,8 @@
         <td><%= @test.eng_result %></td>
         <td><%= @test.soci_result %></td>
         <td><%= @test.sci_result %></td>
+        <td><%= link_to "編集", edit_testresult_path %></td>
+        <td><%= link_to "削除", testresult_path, method: :delete, data: { confirm: "削除しますか?" } %></td>
       </tr>
   </tbody>
 </table>

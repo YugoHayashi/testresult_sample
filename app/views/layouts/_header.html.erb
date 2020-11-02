@@ -6,7 +6,7 @@
         <li><%= link_to "テスト結果登録",   test_path %></li>
         <% if logged_in? %>
           <li><%= link_to "ユーザ一覧", users_path %></li>
-          <li><%= link_to "テスト一覧", '#' %></li>
+          <li><%= link_to "テスト一覧", testresults_path %></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "ログイン", login_path %></li>
