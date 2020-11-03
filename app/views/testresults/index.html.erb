@@ -1,6 +1,18 @@
 <% provide(:title, 'All testresults') %>
 <h3>テスト一覧</h3>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :jap_result_or_math_result_or_eng_result_soci_result_sci_result, "点数" %>
+  <%= f.number_field :jap_result_or_math_result_or_eng_result_or_soci_result_or_sci_result_gteq %>〜
+  <%= f.number_field :jap_result_or_math_result_or_eng_result_or_soci_result_or_sci_result_lt %>
+
+  <%= f.label :name1, "テキスト" %>
+  <%= f.search_field :name1_cont %>
+
+  <%= f.submit "検索" %>
+
+<% end %>  
+
 <%= link_to "新規登録", testresults_path, class: "btn btn-lg btn-primary" %>
 <P><br></P>
 
@@ -33,3 +45,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @tests %>

@@ -1,0 +1,22 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      testresult: テスト結果
+    #属性名を指定
+    attributes:
+      user:
+        #カラム名と表示したい日本語
+        name1: ユーザ名
+        name2: ユーザ名かな
+        email: メールアドレス
+        address: 住所
+        password: パスワード
+      
+      testresult:
+        name1: ユーザ名
+        jap_result: 国語
+        math_result: 数学
+        eng_result: 英語
+        soci_result: 社会
+        sci_result: 理科

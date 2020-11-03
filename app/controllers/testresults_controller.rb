@@ -1,7 +1,8 @@
 class TestresultsController < ApplicationController
 
   def index
-    @tests = Testresult.all.order(updated_at: "DESC")
+    @q = Testresult.ransack(params[:q])
+    @tests = @q.result.kaminari_page(params[:page]).order(updated_at: "DESC")
   end
 
   def show
@@ -37,7 +38,7 @@ class TestresultsController < ApplicationController
   end
 
   def destroy
-    Testresult.find(params[:id]).destroy
+    Testresult.find(params[:id]).discard
     flash[:success] = "削除完了"
     redirect_to testresults_url
   end

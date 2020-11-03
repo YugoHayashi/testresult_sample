@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  
 
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result.page(params[:page]).order(updated_at: "DESC")
+    @users = @q.result.kaminari_page(params[:page]).order(updated_at: "DESC")
   end
 
   def show
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.find(params[:id]).discard
     flash[:success] = "削除完了"
     redirect_to users_url
   end
@@ -51,10 +51,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name1, :name2, :email, :address, :password)
     end
 
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
 end

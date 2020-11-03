@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_011429) do
+ActiveRecord::Schema.define(version: 2020_11_02_061617) do
 
   create_table "testresults", force: :cascade do |t|
     t.string "name1"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_11_02_011429) do
     t.integer "sci_result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_testresults_on_discarded_at"
     t.index [nil], name: "index_testresults_on_user_id"
   end
 
@@ -32,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_11_02_011429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.datetime "discarded_at"
+    t.index ["discarded_at"], name: "index_users_on_discarded_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

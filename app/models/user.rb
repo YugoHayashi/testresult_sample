@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Discard::Model
+  default_scope -> { kept }
   before_save { self.email = email.downcase }
   validates :name1,  presence: true, length: { maximum: 126 }
   validates :name2,  presence: true, length: { maximum: 126 }, format: { with: /\A[ぁ-んァ-ヶー－]+\z/ }
